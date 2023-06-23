@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   get    "logout", to: "sessions#destroy"
   delete "logout", to: "sessions#destroy"
   post   "logout", to: "sessions#destroy"
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: :show
+    end
+  end
 end
