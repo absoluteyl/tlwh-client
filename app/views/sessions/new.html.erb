@@ -1,0 +1,8 @@
+<%= form_tag "/login", class: "new_session" do %>
+  <%= text_field_tag :eth_message, "", readonly: true, class: "eth_message" %> <br />
+  <%= text_field_tag :eth_address, "", readonly: true, class: "eth_address" %> <br />
+  <%= text_field_tag :eth_signature, "", readonly: true, class: "eth_signature" %> <br />
+<% end %>
+<button class="eth_connect">Login with Ethereum</button>
+<%= javascript_include_tag "sessions_new" %>
+<p>Not a member yet? <%= link_to "Sign up", signup_path %></p>
