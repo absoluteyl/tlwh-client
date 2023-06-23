@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    redirect_to login_path unless logged_in?
+  end
+
   def new
     @user = User.new
   end
