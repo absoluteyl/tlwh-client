@@ -8,8 +8,8 @@ class Ipfs
       )
     end
 
-    def url(hash)
-      "#{ENV['IPFS_HOST']}#{hash}"
+    def url(ipfs_id)
+      "#{ENV['IPFS_HOST']}#{ipfs_id}"
     end
   end
 
