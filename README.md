@@ -1,24 +1,60 @@
 # the Last Watch Hist Client
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
 
-Things you may want to cover:
+- Ruby 3.2.2
+- Rails 7.0.5
+- Infura API credentials for:
+  - IPFS
+  - RPC
 
-* Ruby version
 
-* System dependencies
+## Development
 
-* Configuration
+Clone this project from Github
 
-* Database creation
+```bash
+git clone git@github.com:absoluteyl/tlwh-client.git
+```
 
-* Database initialization
+### Install dependencies
 
-* How to run the test suite
+```bash
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Database Migration
 
-* Deployment instructions
+```bash
+rails db:create db:migrate
+```
 
-* ...
+### Configure environment variables
+
+copy `.env.example` to `.env` and set the environment variables of your own.
+
+```bash
+cp .env.example .env
+
+# reload after configured
+cd .
+```
+
+### Testing
+
+(To be updated)
+
+
+## Specifications
+
+### The use of IPFS
+
+To maintain the consistency of decentralize concept, this project uses IPFS for data storage as much as possible, including: 
+
+* NFT Metadata
+* Watch History of User
+
+### Contract
+
+* ABI File for the contract
+  * can be found on Etherscan of the contract
