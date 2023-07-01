@@ -3,4 +3,6 @@
   Your Eth Address: <%= current_user.eth_address %><br>
   Your Eth Nonce: <%= current_user.eth_nonce %>
 </p>
-<p><%= link_to "Logout", logout_path %></p>
+<p>
+<%= button_to "Logout", logout_path %>
+</p>
