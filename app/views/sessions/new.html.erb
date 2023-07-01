@@ -4,5 +4,5 @@
   <%= text_field_tag :eth_signature, "", readonly: true, class: "eth_signature" %> <br />
 <% end %>
 <button class="eth_connect">Login with Ethereum</button>
-<%= javascript_include_tag "sessions_new" %>
+<%= javascript_pack_tag "sessions_new" %>
 <p>Not a member yet? <%= link_to "Sign up", signup_path %></p>
