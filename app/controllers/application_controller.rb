@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  def require_login
+    redirect_to login_path unless logged_in?
+  end
+
   def get_new_nonce
     SecureRandom.uuid
   end

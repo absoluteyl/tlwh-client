@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:index, :show]
+
   def index
     @users = User.all
   end
 
   def show
-    redirect_to login_path unless logged_in?
   end
 
   def new
