@@ -11,6 +11,11 @@
 
   <body>
     <h1>the Last Watch Hist</h1>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
