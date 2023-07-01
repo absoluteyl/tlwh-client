@@ -40,6 +40,21 @@ cp .env.example .env
 cd .
 ```
 
+### Start the server
+
+Since Rails uses webpack by default after 6.1, we need to start both rails server and webpack compile server. So we use `foreman` to start both of them.
+
+```bash
+foreman start
+
+# or with a specific Procfile
+foreman start -f Procfile.dev
+
+# or start them separately
+rails s
+bin/webpack-dev-server
+```
+
 ### Testing
 
 (To be updated)
@@ -49,7 +64,7 @@ cd .
 
 ### The use of IPFS
 
-To maintain the consistency of decentralize concept, this project uses IPFS for data storage as much as possible, including: 
+To maintain the consistency of decentralize concept, this project uses IPFS for data storage as much as possible, including:
 
 * NFT Metadata
 * Watch History of User
