@@ -46,6 +46,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 gem "rest-client", "~> 2.1.0"
+gem "webpacker", "~> 5.4.4"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
