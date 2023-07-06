@@ -56,10 +56,15 @@ async function requestAccounts() {
 // get nonce from /api/v1/users/ by account
 async function getUuidByAccount(account) {
   const response = await fetch("/api/v1/users/" + account);
-  const nonceJson = await response.json();
-  if (!nonceJson) return null;
-  const uuid = nonceJson[0].eth_nonce;
-  return uuid;
+  if (response.ok) {
+    const nonceJson = await response.json();
+    if (!nonceJson) return null;
+    const uuid = nonceJson[0].eth_nonce;
+    return uuid;
+  } else {
+    console.error(response);
+    return null;
+  }
 }
 
 // request ethereum signature for message from account
