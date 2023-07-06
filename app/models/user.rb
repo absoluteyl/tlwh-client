@@ -29,4 +29,11 @@ class User < ApplicationRecord
     ipfs_client = Ipfs.client
     ipfs_client.add(tmp.path)['Hash'] rescue nil
   end
+
+  def token_detail
+    tlwh = TLWH.new
+    token_id  = tlwh.eth_client.call(tlwh.contract, 'tokenOfOwnerByIndex', self.eth_address, 0)
+    token_url = tlwh.eth_client.call(tlwh.contract, 'tokenURI', token_id)
+    JSON.parse(Net::HTTP.get(URI(token_url))).deep_symbolize_keys
+  end
 end
