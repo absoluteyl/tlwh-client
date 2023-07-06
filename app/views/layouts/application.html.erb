@@ -7,10 +7,12 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_pack_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <h1>the Last Watch Hist</h1>
+    <%= render 'layouts/navbar' %>
     <% flash.each do |type, msg| %>
       <div>
         <%= msg %>
