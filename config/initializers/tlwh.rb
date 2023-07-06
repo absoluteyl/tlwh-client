@@ -39,6 +39,10 @@ class TLWH
     eth_client.eth_get_logs(params)['result']
   end
 
+  def func_mint
+    @func_mint ||= contract.functions.find{ |function| function.name == 'mint' }
+  end
+
   def eth_client
     @eth_client ||= Eth::Client.create(rpc_url)
   end
