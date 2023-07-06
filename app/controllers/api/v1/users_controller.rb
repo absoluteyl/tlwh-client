@@ -1,7 +1,11 @@
 class Api::V1::UsersController < ApiController
 
   def show
-    render json: [eth_nonce: user.eth_nonce] if user.present?
+    if user.present?
+      render json: [eth_nonce: user.eth_nonce]
+    else
+      render json: [error: 'User not found!'], status: 404
+    end
   end
 
   def mint
