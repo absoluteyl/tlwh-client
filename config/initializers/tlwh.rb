@@ -39,8 +39,6 @@ class TLWH
     eth_client.eth_get_logs(params)['result']
   end
 
-  protected
-
   def eth_client
     @eth_client ||= Eth::Client.create(rpc_url)
   end
