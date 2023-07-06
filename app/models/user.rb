@@ -27,6 +27,6 @@ class User < ApplicationRecord
     tmp.close
 
     ipfs_client = Ipfs.client
-    ipfs_client.add(tmp.path)['Hash']
+    ipfs_client.add(tmp.path)['Hash'] rescue nil
   end
 end
