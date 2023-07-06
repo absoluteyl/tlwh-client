@@ -1,7 +1,5 @@
-<h3>Hello! <%= current_user.username %></h3>
 <p>
   Your Eth Address: <%= current_user.eth_address %><br>
-  Your Eth Nonce: <%= current_user.eth_nonce %>
 </p>
 <p>
 <% if current_user.is_minted? %>
@@ -14,5 +12,4 @@
   <p class="eth_mint_result"></p>
   <%= javascript_pack_tag "users_mint" %>
 <% end %>
-<%= button_to "Logout", logout_path, method: :delete %>
 </p>
