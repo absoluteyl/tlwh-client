@@ -3,4 +3,11 @@
   Your Eth Address: <%= current_user.eth_address %><br>
   Your Eth Nonce: <%= current_user.eth_nonce %>
 </p>
-<p><%= link_to "Logout", logout_path %></p>
+<p>
+<% unless current_user.is_minted? %>
+  <%= button_to "Mint", mint_path, method: :post, class: 'eth_connect' %>
+  <p class="eth_mint_result"></p>
+  <%= javascript_pack_tag "users_mint" %>
+<% end %>
+<%= button_to "Logout", logout_path, method: :delete %>
+</p>

@@ -24,23 +24,16 @@ if (typeof window.ethereum !== 'undefined') {
 
     // sign a message with current time and nonce from database
     const nonce = await getUuidByAccount(etherbase);
-    console.log("nonce: ", nonce);
     if (nonce) {
-      console.log("nonce: ", nonce);
       const customTitle = "the Last Watch Hist";
-      console.log("customTitle: ", customTitle);
       const requestTime = new Date().getTime();
-      console.log("requestTime: ", requestTime);
       const message = customTitle + "," + requestTime + "," + nonce;
-      console.log("message:", message);
       const signature = await personalSign(etherbase, message);
-      console.log("signature:", signature);
 
       // populate and submit form
       formInputEthMessage.value = message;
       formInputEthAddress.value = etherbase;
       formInputEthSignature.value = signature;
-      console.log("beforeSubmit");
       formNewSession.submit();
     } else {
       // should have some error handling here
@@ -71,7 +64,6 @@ async function getUuidByAccount(account) {
 
 // request ethereum signature for message from account
 async function personalSign(account, message) {
-  console.log("personalSign");
   const signature = await ethereum.request({ method: 'personal_sign', params: [ message, account ] });
   return signature;
 }
