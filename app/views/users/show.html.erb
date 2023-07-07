@@ -1,5 +1,6 @@
 <p>
-  Your Eth Address: <%= current_user.eth_address %><br>
+  Username: <%= @user.username %><br>
+  Eth Address: <%= @user.eth_address %><br>
 </p>
 <p>
 <% if current_user.is_minted? %>
