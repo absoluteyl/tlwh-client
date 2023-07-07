@@ -3,14 +3,14 @@
   Eth Address: <%= @user.eth_address %><br>
 </p>
 <p>
-<% if current_user.is_minted? %>
-<div class="eth_token">
-  <p class="token_name"><%= current_user.token_detail[:name] %></p>
-  <%= image_tag current_user.token_detail[:image] %>
-</div>
-<% else %>
-  <%= button_to "Mint", mint_path, method: :post, class: 'eth_connect' %>
+<% if !@user.is_minted? && current_user == @user %>
+   <%= button_to "Mint", mint_path, method: :post, class: 'eth_connect' %>
   <p class="eth_mint_result"></p>
   <%= javascript_pack_tag "users_mint" %>
+<% else %>
+  <div class="eth_token">
+    <p class="token_name"><%= @user.token_detail[:name] %></p>
+    <%= image_tag @user.token_detail[:image] %>
+  </div>
 <% end %>
 </p>
