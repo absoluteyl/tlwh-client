@@ -1,0 +1,5 @@
+<%= form_with model: current_user do |f| %>
+  <%= f.label :kktv_user_token %>
+  <%= f.text_area :kktv_user_token, size: "60x10" %>
+  <%= f.submit %>
+<% end %>
