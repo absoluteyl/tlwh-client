@@ -12,5 +12,8 @@
     <p class="token_name"><%= @user.token_detail[:name] %></p>
     <%= image_tag @user.token_detail[:image] %>
   </div>
+  <% if current_user == @user %>
+    <%= link_to "Edit Connected Accounts", edit_user_path %>
+  <% end %>
 <% end %>
 </p>
