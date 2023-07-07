@@ -1,15 +1,20 @@
 <p>
-  Your Eth Address: <%= current_user.eth_address %><br>
+  Username: <%= @user.username %><br>
+  Eth Address: <%= @user.eth_address %><br>
 </p>
 <p>
-<% if current_user.is_minted? %>
-<div class="eth_token">
-  <p class="token_name"><%= current_user.token_detail[:name] %></p>
-  <%= image_tag current_user.token_detail[:image] %>
-</div>
-<% else %>
-  <%= button_to "Mint", mint_path, method: :post, class: 'eth_connect' %>
+<% if !@user.is_minted? && current_user == @user %>
+   <%= button_to "Mint", mint_path, method: :post, class: 'eth_connect' %>
   <p class="eth_mint_result"></p>
   <%= javascript_pack_tag "users_mint" %>
+<% else %>
+  <div class="eth_token">
+    <p class="token_name"><%= @user.token_detail[:name] %></p>
+    <%= image_tag @user.token_detail[:image] %>
+  </div>
+  <% if current_user == @user %>
+    <%= link_to "Edit Connected Accounts", edit_user_path %>
+  <% end %>
+  <%= render 'watch_hist' if @watch_hist.present? %>
 <% end %>
 </p>

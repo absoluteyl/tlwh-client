@@ -1,0 +1,18 @@
+<h3>Watch Hist</h3>
+<table class="table">
+  <% @watch_hist.each do |item| %>
+    <tr>
+      <td>
+        <%= link_to image_tag(item[:cover], alt: item[:name]), item[:link] %>
+      </td>
+      <td>
+        <%= link_to item[:name], item[:link] %><br>
+        <%= item[:progress] %><br>
+        <%= "#{item[:type]}, #{item[:year]}" %><br>
+        <%= item[:categories] %><br>
+        <%= item[:casts] %><br>
+        <%= item[:crews] %><br>
+      </td>
+    </tr>
+  <% end %>
+</table>

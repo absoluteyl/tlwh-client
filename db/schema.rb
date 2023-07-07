@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_16_073339) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_112625) do
   create_table "users", force: :cascade do |t|
     t.string "eth_address"
     t.string "eth_nonce"
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "kktv_user_token"
     t.index ["eth_address"], name: "index_users_on_eth_address"
     t.index ["username"], name: "index_users_on_username"
   end
