@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login, except: :index
-  before_action :require_authorize, onlt: [:edit, :update]
+  before_action :require_authorize, only: [:edit, :update]
 
   def index
     @users = User.all
