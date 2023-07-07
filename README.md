@@ -64,10 +64,7 @@ bin/webpack-dev-server
 
 ### The use of IPFS
 
-To maintain the consistency of decentralize concept, this project uses IPFS for data storage as much as possible, including:
-
-* NFT Metadata
-* Watch History of User
+To maintain the consistency of decentralize concept, this project uses IPFS to store NFT Metadata. And keep data storage as simple as possible.
 
 ### Contract
 
