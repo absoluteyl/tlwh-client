@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'users#index'
 
-  get    "users",     to: "users#index"
-  get    "users/:id", to: "users#show", as: :user
+  resources :users, except: [:new, :create, :destroy]
   get    "signup",    to: "users#new"
   post   "signup",    to: "users#create"
 
