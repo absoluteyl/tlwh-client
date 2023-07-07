@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_authorize
-    if current_user.id != params[:id]
+    if current_user.id != params[:id].to_i
       redirect_to users_path, alert: "You are not authorized to edit this user."
     end
   end
