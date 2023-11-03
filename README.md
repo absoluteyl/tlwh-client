@@ -8,7 +8,6 @@
   - IPFS
   - RPC
 
-
 ## Development
 
 Clone this project from Github
@@ -60,7 +59,6 @@ bin/webpack-dev-server
 
 (To be updated)
 
-
 ## Specifications
 
 ### The use of IPFS
@@ -69,5 +67,5 @@ To maintain the consistency of decentralize concept, this project uses IPFS to s
 
 ### Contract
 
-* ABI File for the contract
-  * can be found on Etherscan of the contract
+- ABI File for the contract
+  - can be found on Etherscan of the contract
