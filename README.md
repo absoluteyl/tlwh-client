@@ -21,6 +21,7 @@ git clone git@github.com:absoluteyl/tlwh-client.git
 
 ```bash
 bundle install
+yarn install
 ```
 
 ### Database Migration
